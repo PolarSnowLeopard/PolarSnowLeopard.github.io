@@ -1,7 +1,7 @@
 ---
-title: 在CFFF云平台使用llama-factory部署及微调Qwen2.5-7B-Instruct   
+title: 在CFFF云平台使用LLaMA_Factory部署及微调Qwen7B   
 date: 2024-12-16 16:00:00 +0800
-categories: [llama-factory, CFFF, Qwen, LLM]
+categories: [LLM]
 tags: [llama-factory, CFFF, Qwen, LLM]     # TAG names should always be lowercase
 author: PolarSnowLeopard
 ---
@@ -77,7 +77,7 @@ CUDA_VISIBLE_DEVICES=0 python src/webui.py \
 # 默认端口为7860
 ```
 
-即可启动webui界面。利用autodl提供的ssh隧道工具，即可在本地访问云服务器的7860端口。修改下图中的配置，点击加载模型，即可完成部署。
+即可启动webui界面。利用autodl提供的ssh隧道工具，即可在本地访问云服务器的7860端口。修改下图中的配置，点���加载模型，即可完成部署。
 
 ![webui](https://lhcos-84055-1317429791.cos.ap-shanghai.myqcloud.com/博客/LLaMA-Factory/LLaMA-Factory webui.png)
 
@@ -189,7 +189,7 @@ if __name__ == '__main__':
 
 ### 2. 设置微调参数并进行训练
 
-由于对LLM的训练不是很了解，因此大部分参数我都使用的，默认值。主要是设置一下数据集路径，然后把训练轮数调成了`100`（默认的3没有收敛，可能是因为这个数据集只有108条数据，有点少）
+由于对LLM的训练不是很了解，因此大部分参数我都使用的，默认值。主要是设置一下数据集路径，然后把���练轮数调成了`100`（默认的3没有收敛，可能是因为这个数据集只有108条数据，有点少）
 
 ![image-20241216153134999](https://lhcos-84055-1317429791.cos.ap-shanghai.myqcloud.com/博客/LLaMA-Factory/微调设置.png)
 
@@ -197,7 +197,7 @@ if __name__ == '__main__':
 
 ### 3. 推理
 
-训练完成后，切换至`chat`选项卡，选择“检查点路径”后加载模型，就可以和微调之后的模型对话了
+训练完成后，切换至`chat`选项卡，选择"检查点路径"后加载模型，就可以和微调之后的模型对话了
 
 ![image-20241216153551256](https://lhcos-84055-1317429791.cos.ap-shanghai.myqcloud.com/博客/LLaMA-Factory/微调后推理设置.png)
 
